@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+  <div class="overlay"
+       [style.background-image]="'linear-gradient('  + this.color1 + ',' + this.color2 + ')'">
+  </div>
+  <div class="jumbotron-content">
+    <h1 class="display-4 mt-4">Welcome C1220G2 </h1>
+    <p>You can change background color </p>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+          <div class="form-group">
+            <input type="text" class="form-control" [(colorPicker)]="color1"
+                   [cpPresetColors]="['#7B1FA2', '#039BE5', '#FF5252', '#D32F2F', '#283593']"
+                   [style.background]="color1"
+                   [value]="color1">
+          </div>
+        </div>
+        <div class="col col-lg-2">
+          <div class="form-group">
+            <input type="text" class="form-control" [(colorPicker)]="color2"
+                   [cpPresetColors]="['#7B1FA2', '#039BE5', '#FF5252', '#D32F2F', '#283593']"
+                   [style.background]="color2"
+                   [value]="color2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
