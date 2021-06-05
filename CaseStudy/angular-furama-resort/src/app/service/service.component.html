@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Types Service :</label>
+      <label class="col-md-3 col-form-label form-control-label">Types of Service :</label>
       <div class="col-md-9">
         <select class="form-control editable">
           <option>Villa</option>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Area Service :</label>
+      <label class="col-md-3 col-form-label form-control-label">Area:</label>
       <div class="col-lg-9">
         <input class="form-control editable" type="number"/>
       </div>
@@ -78,3 +78,35 @@
     </div>
   </form>
 </div>
+
+<hr>
+<table class="table table-hover" style="margin-top: 10%">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Types Of Service</th>
+    <th scope="col">Area</th>
+    <th scope="col">Standard Room</th>
+    <th scope="col">Edit</th>
+    <th scope="col">View</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let service of services">
+    <td>{{service.id}}</td>
+    <td>{{service.typeOfService}}</td>
+    <td>{{service.area}}</td>
+    <td>{{service.standard}}</td>
+    <td>
+      <a class="btn btn-primary" role="button">Edit</a>
+    </td>
+    <td>
+      <a class="btn btn-primary" role="button">View</a>
+    </td>
+    <td>
+      <a class="btn btn-primary" role="button">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

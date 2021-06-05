@@ -10,6 +10,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ServiceComponent } from './service/service.component';
 import { ContractComponent } from './contract/contract.component';
 import { ContractDetailComponent } from './contract-detail/contract-detail.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,11 +22,12 @@ import { ContractDetailComponent } from './contract-detail/contract-detail.compo
     ContractComponent,
     ContractDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

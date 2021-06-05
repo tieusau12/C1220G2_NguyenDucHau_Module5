@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Employee} from "../employee";
 
 @Component({
   selector: 'app-employee',
@@ -6,10 +7,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+  employee: Employee = {};
+  employees: Employee[] = [
+    {
+      id: 'NV-1111',
+      name: 'Nguyễn Đức Hậu',
+      gender: 'Male',
+      dateOfBirth: '06/04/2005',
+      idCard: 201732015,
+      phone: '0772785499',
+      salary: 7000,
+      email: 'duchau@gmail.com',
+      address: 'Đà Nẵng',
+      level: 'Doctor',
+      position: 'Director',
+      humanResource: 'Kitchen'
+    },
+    {
+      id: 'NV-2222',
+      name: 'Lê Đức Sang',
+      gender: 'Male',
+      dateOfBirth: '06/04/1991',
+      idCard: 201734455,
+      phone: '0772785999',
+      salary: 8000,
+      email: 'sangle@gmail.com',
+      address: 'Quảng Nam',
+      level: 'Doctor',
+      position: 'Director',
+      humanResource: 'Kitchen'
+    }
+  ];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit()
+    :
+    void {
+  }
+  addNewEmployee(){
+    this.employees.push(this.employee);
+  }
 }
