@@ -1,0 +1,42 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Furama Resort</a>
+    <ng-template ngbNavContent>
+      <app-home></app-home>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Customer</a>
+    <ng-template ngbNavContent>
+      <app-customer></app-customer>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>Employee</a>
+    <ng-template ngbNavContent>
+      <app-employee></app-employee>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Service</a>
+    <ng-template ngbNavContent>
+      <app-service></app-service>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="5">
+    <a ngbNavLink>Contract</a>
+    <ng-template ngbNavContent>
+      <app-contract></app-contract>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="6">
+    <a ngbNavLink>Contract Detail</a>
+    <ng-template ngbNavContent>
+      <app-contract-detail></app-contract-detail>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<pre>Active: {{ active }}</pre>
