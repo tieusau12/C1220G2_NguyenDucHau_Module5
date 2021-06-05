@@ -9,7 +9,7 @@ export class CalculatorComponent implements OnInit {
   title = 'Simple Calculator';
   numberOne: number = 0;
   numberTwo: number = 0;
-  result: number = 0;
+  result: any = 0;
 
   constructor() {
   }
@@ -18,7 +18,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   add() {
-    this.result = this.numberOne + this.numberTwo;
+    this.result = Number(this.numberOne) + Number(this.numberTwo);
   }
 
   sub() {
@@ -30,6 +30,19 @@ export class CalculatorComponent implements OnInit {
   }
 
   divide() {
-    this.result = this.numberOne / this.numberTwo;
+
+    if (this.numberTwo == 0) {
+      this.result = 'Can not delete for 0';
+    } else {
+      this.result = this.numberOne / this.numberTwo;
+    }
+  }
+
+  setNumberOne($event: any): void {
+    this.numberOne = $event.target.value;
+  }
+
+  setNumberTwo($event: any): void {
+    this.numberTwo = $event.target.value;
   }
 }
