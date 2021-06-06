@@ -1,112 +1,128 @@
 <h2 class="text-danger text-center">Add New Service </h2>
-<div class="card-body">
-  <form class="form" role="form" autocomplete="off">
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">ID Service :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="text"/>
+<div class="row">
+  <div class="col-8">
+    <table class="table table-hover" style="margin-top: 10%">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Types Of Service</th>
+        <th scope="col">Area</th>
+        <th scope="col">Standard Room</th>
+        <th scope="col">Edit</th>
+        <th scope="col">View</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let service of services">
+        <td>{{service.idService}}</td>
+        <td>{{service.typeOfService}}</td>
+        <td>{{service.area}}</td>
+        <td>{{service.standard}}</td>
+        <td>
+          <a class="btn btn-primary" role="button">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">View</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshServices()">
+      </ngb-pagination>
+
+      <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshServices()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card-body">
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">ID Service :</label>
+        <div class="col-lg-9">
+          <input class="form-control editable" [(ngModel)]="service.idService" type="text"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="type" class="col-md-3 col-form-label form-control-label">Types of Service :</label>
+        <div class="col-md-9">
+          <select class="form-control editable" [(ngModel)]="service.typeOfService" id="type">
+            <option value="Villa">Villa</option>
+            <option value="Room">Room</option>
+            <option value="House">House</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label form-control-label" for="area">Area:</label>
+        <div class="col-lg-9">
+          <input id="area" class="form-control editable" [(ngModel)]="service.area" type="number"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Pool Area :</label>
+        <div class="col-lg-9">
+          <input class="form-control editable" [(ngModel)]="service.poolArea" type="number"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Standard Room :</label>
+        <div class="col-lg-9">
+          <select class="form-control editable" [(ngModel)]="service.standard">
+            <option value="Standard">Standard</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Superior">Superior</option>
+            <option value="Suite">Suite</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label" >Number of Floors :</label>
+        <div class="col-lg-9">
+          <input class="form-control editable" type="number" [(ngModel)]="service.floors"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Capacity:</label>
+        <div class="col-lg-9">
+          <input class="form-control editable"[(ngModel)]="service.capacity" type="number"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Service prices :</label>
+        <div class="col-lg-9">
+          <input class="form-control editable" [(ngModel)]="service.pricesService" type="number"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Rental Types :</label>
+        <div class="col-lg-9">
+          <select class="form-control editable" [(ngModel)]="service.rentalTypes">
+            <option value="Day">Day</option>
+            <option value="Month">Month</option>
+            <option value="Year">Year</option>
+            <option value="Hours">Hours</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label"></label>
+        <div class="col-lg-9">
+          <input type="reset" class="btn btn-secondary" value="Cancel">
+          <input type="submit" class="btn btn-primary" (click)="addNewService()" value="Add">
+        </div>
       </div>
     </div>
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Types of Service :</label>
-      <div class="col-md-9">
-        <select class="form-control editable">
-          <option>Villa</option>
-          <option>Room</option>
-          <option>House</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Area:</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Pool Area :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Standard Room :</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>Standard</option>
-          <option>Deluxe</option>
-          <option>Superior</option>
-          <option>Suite</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Number of Floors :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Maximum capacity:</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Service prices :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Rental Types :</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>Day</option>
-          <option>Month</option>
-          <option>Year</option>
-          <option>Hours</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label"></label>
-      <div class="col-lg-9">
-        <input type="reset" class="btn btn-secondary" value="Cancel">
-        <input type="submit" class="btn btn-primary" value="Add">
-      </div>
-    </div>
-  </form>
+  </div>
 </div>
 
-<hr>
-<table class="table table-hover" style="margin-top: 10%">
-  <thead>
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Types Of Service</th>
-    <th scope="col">Area</th>
-    <th scope="col">Standard Room</th>
-    <th scope="col">Edit</th>
-    <th scope="col">View</th>
-    <th scope="col">Delete</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let service of services">
-    <td>{{service.id}}</td>
-    <td>{{service.typeOfService}}</td>
-    <td>{{service.area}}</td>
-    <td>{{service.standard}}</td>
-    <td>
-      <a class="btn btn-primary" role="button">Edit</a>
-    </td>
-    <td>
-      <a class="btn btn-primary" role="button">View</a>
-    </td>
-    <td>
-      <a class="btn btn-primary" role="button">Delete</a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+
+
+

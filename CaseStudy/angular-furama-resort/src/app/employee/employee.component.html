@@ -1,157 +1,173 @@
 <h2 class="text-danger text-center">Create New Employee</h2>
-<div class="card-body">
-  <form class="form" role="form" autocomplete="off">
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">ID Employee:</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type=text/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Employee name :</label>
-      <div class="col-md-9">
-        <input class="form-control editable" type="text"
-               placeholder="Enter name"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Genders :</label>
-      <div class="form-check col-md-2">
-        <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked/>
-        <label class="form-check-label" for="male">
-         Male
-        </label>
-      </div>
-      <div class="form-check col-md-2">
-        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-        <label class="form-check-label" for="female">
-        Female
-        </label>
-      </div>
-      <div class="form-check col-md-2">
-        <input class="form-check-input" type="radio" name="gender" id="other" value="other">
-        <label class="form-check-label" for="other">
-          Other genders
-        </label>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Date of Birth:</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="date"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">ID Card:</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="text"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Phone :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="text"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Salary :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="text"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Email :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type=text/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Address :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="text"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Level :</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>Doctor</option>
-          <option>Master</option>
-          <option>University</option>
-          <option>College</option>
-          <option>Intermediate</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Position :</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option> Receptionist</option>
-          <option> Waiter</option>
-          <option> Specialist</option>
-          <option> Supervisor</option>
-          <option> Manager</option>
-          <option> Director</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Human Resource</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>Finance</option>
-          <option>Commercial</option>
-          <option>Food & Beverage</option>
-          <option>Kitchen</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label"></label>
-      <div class="col-lg-9">
-        <input type="reset" class="btn btn-secondary" value="Cancel">
-        <input type="submit" class="btn btn-primary" value="Add">
-      </div>
-    </div>
-  </form>
-</div>
-<hr>
 <div class="row">
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Employee Name</th>
-      <th scope="col">Date of Birth</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Level</th>
-      <th scope="col">Position</th>
-      <th scope="col">Human Resource</th>
-      <th scope="col">Edit</th>
-      <th scope="col">View</th>
-      <th scope="col">Delete</th>
-    </tr>
-    </thead>
-    <tbody >
-    <tr *ngFor="let employee of employees">
-     <td>{{employee.id}}</td>
-     <td>{{employee.name}}</td>
-     <td>{{employee.dateOfBirth}}</td>
-     <td>{{employee.gender}}</td>
-     <td>{{employee.level}}</td>
-     <td>{{employee.position}}</td>
-     <td>{{employee.humanResource}}</td>
-      <td>
-        <a class="btn btn-primary" role="button">Edit</a>
-      </td>
-      <td>
-        <a class="btn btn-primary" role="button">View</a>
-      </td>
-      <td>
-        <a class="btn btn-primary" role="button">Delete</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="col-8">
+    <table class="table table-hover" style="margin-top: 5%">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Level</th>
+        <th scope="col">Position</th>
+        <th scope="col">Human Resource</th>
+        <th scope="col">Edit</th>
+        <th scope="col">View</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.idEmployee}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.dateOfBirth}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.level}}</td>
+        <td>{{employee.position}}</td>
+        <td>{{employee.humanResource}}</td>
+        <td>
+          <a class="btn btn-primary" role="button">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">View</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshEmployee()">
+      </ngb-pagination>
+
+      <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshEmployee()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card-body">
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">ID Employee:</label>
+        <div class="col-lg-9">
+          <input class="form-control " [(ngModel)]="employee.idEmployee" type="text"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label form-control-label">Employee name :</label>
+        <div class="col-md-9">
+          <input class="form-control " type="text" [(ngModel)]="employee.name"
+                 placeholder="Enter name"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label form-control-label">Genders :</label>
+        <div class="form-check col-md-2">
+          <input class="form-check-input" type="radio" name="gender" id="male" [(ngModel)]="employee.gender"
+                 value="male"
+                 checked/>
+          <label class="form-check-label" for="male">
+            Male
+          </label>
+        </div>
+        <div class="form-check col-md-2">
+          <input class="form-check-input" type="radio" name="gender" [(ngModel)]="employee.gender" id="female"
+                 value="female">
+          <label class="form-check-label" for="female">
+            Female
+          </label>
+        </div>
+        <div class="form-check col-md-2">
+          <input class="form-check-input" type="radio" name="gender" [(ngModel)]="employee.gender" id="other"
+                 value="other">
+          <label class="form-check-label" for="other">
+            Other genders
+          </label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Date of Birth:</label>
+        <div class="col-lg-9">
+          <input class="form-control " [(ngModel)]="employee.dateOfBirth" type="date"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">ID Card:</label>
+        <div class="col-lg-9">
+          <input class="form-control " [(ngModel)]="employee.idCard" type="text"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Phone :</label>
+        <div class="col-lg-9">
+          <input class="form-control " [(ngModel)]="employee.phone" type="text"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Salary :</label>
+        <div class="col-lg-9">
+          <input class="form-control " [(ngModel)]="employee.salary" type="text"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Email :</label>
+        <div class="col-lg-9">
+          <input class="form-control " type="text" [(ngModel)]="employee.email"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Address :</label>
+        <div class="col-lg-9">
+          <input class="form-control " [(ngModel)]="employee.address" type="text"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Level :</label>
+        <div class="col-lg-9">
+          <select class="form-control " [(ngModel)]="employee.level">
+            <option value="Doctor">Doctor</option>
+            <option value="Master">Master</option>
+            <option value="University">University</option>
+            <option value="College">College</option>
+            <option value="Intermediate">Intermediate</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Position :</label>
+        <div class="col-lg-9">
+          <select class="form-control " [(ngModel)]="employee.position">
+            <option value="Receptionist"> Receptionist</option>
+            <option value="Waiter"> Waiter</option>
+            <option value="Specialist"> Specialist</option>
+            <option value="Supervisor"> Supervisor</option>
+            <option value="Manager"> Manager</option>
+            <option value="Director"> Director</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Human Resource</label>
+        <div class="col-lg-9">
+          <select class="form-control " [(ngModel)]="employee.humanResource">
+            <option value="Finance">Finance</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Food & Beverage">Food & Beverage</option>
+            <option value="Kitchen">Kitchen</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label"></label>
+        <div class="col-lg-9">
+          <input type="reset" class="btn btn-secondary" value="Cancel">
+          <input type="submit" class="btn btn-primary" (click)="addNewEmployee()" value="Add">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

@@ -1,5 +1,5 @@
 export interface Service {
-  id?: string;
+  idService?: string;
   typeOfService?: string;
   area?:number;
   poolArea?:number;

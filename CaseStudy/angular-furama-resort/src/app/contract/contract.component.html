@@ -1,72 +1,133 @@
 <h2 class="text-center text-danger">Create New Contract </h2>
-<div class="card-body">
-  <form class="form" role="form" autocomplete="off">
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Day Start:</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="date"/>
-      </div>
+<div class="row">
+  <div class="col-8">
+    <table class="table table-hover table-responsive-md" style="margin-top: 5%">
+      <thead>
+      <tr>
+        <th scope="col">Contract Number</th>
+        <th scope="col">Date Start</th>
+        <th scope="col">Date End</th>
+        <th scope="col">Deposit </th>
+        <th scope="col">Total Payment</th>
+        <th scope="col">ID Customer</th>
+        <th scope="col">ID Employee</th>
+        <th scope="col">ID Service</th>
+        <th scope="col">Edit</th>
+        <th scope="col">View</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contract of contracts">
+        <td>{{contract.contractNumber}}</td>
+        <td>{{contract.dateStart}}</td>
+        <td>{{contract.dateEnd}}</td>
+        <td>{{contract.deposit}}</td>
+        <td>{{contract.totalPayment}}</td>
+        <td>{{contract.idCustomer}}</td>
+        <td>{{contract.idEmployee}}</td>
+        <td>{{contract.idService}}</td>
+        <td>
+          <a class="btn btn-primary" role="button">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">View</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" role="button">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshContracts()">
+      </ngb-pagination>
+
+      <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshContracts()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+      </select>
     </div>
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label form-control-label">Day End:</label>
-      <div class="col-md-9">
-        <input class="form-control editable" type="date"/>
-      </div>
+  </div>
+  <div class="col-4">
+    <div class="card-body">
+      <form class="form" role="form" autocomplete="off">
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Contract Number:</label>
+          <div class="col-lg-9">
+            <input class="form-control editable" [(ngModel)]="contract.contractNumber" type="number"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Date Start:</label>
+          <div class="col-lg-9">
+            <input class="form-control editable" [(ngModel)]="contract.dateStart" type="date"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label form-control-label">Date End:</label>
+          <div class="col-md-9">
+            <input class="form-control editable"  [(ngModel)]="contract.dateEnd" type="date"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Deposit :</label>
+          <div class="col-lg-9">
+            <input class="form-control editable"  [(ngModel)]="contract.deposit" type="number"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Total payment :</label>
+          <div class="col-lg-9">
+            <input class="form-control editable"  [(ngModel)]="contract.totalPayment" type="number"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">ID Customer</label>
+          <div class="col-lg-9">
+            <select class="form-control editable"  [(ngModel)]="contract.idCustomer">
+              <option value="KH-1111">KH-1111</option>
+              <option value="KH-2222">KH-2222</option>
+              <option value="KH-3333">KH-3333</option>
+              <option value="KH-4444">KH-4444</option>
+              <option value="KH-5555">KH-5555</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">ID Employee :</label>
+          <div class="col-lg-9">
+            <select class="form-control editable" [(ngModel)]="contract.idEmployee">
+              <option value="NV-1111">NV-1111</option>
+              <option value="NV-2222">NV-2222</option>
+              <option value="NV-3333">NV-3333</option>
+              <option value="NV-4444">NV-4444</option>
+              <option value="NV-5555">Nv-5555</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">ID Service :</label>
+          <div class="col-lg-9">
+            <select class="form-control editable"  [(ngModel)]="contract.idService">
+              <option value="DV-1111">DV-1111</option>
+              <option value="DV-2222">DV-2222</option>
+              <option value="DV-3333">DV-3333</option>
+              <option value="DV-4444">DV-4444</option>
+              <option value="DV-5555</">Dv-5555</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"></label>
+          <div class="col-lg-9">
+            <input type="reset" class="btn btn-secondary" value="Cancel">
+            <input type="submit" class="btn btn-primary" (click)="addNewContract()" value="Add">
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Deposit :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">Total payment :</label>
-      <div class="col-lg-9">
-        <input class="form-control editable" type="number"/>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">ID Customer</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>KH-1111</option>
-          <option>KH-2222</option>
-          <option>KH-3333</option>
-          <option>KH-4444</option>
-          <option>KH-5555</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">ID Employee :</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>NV-1111</option>
-          <option>NV-2222</option>
-          <option>NV-3333</option>
-          <option>NV-4444</option>
-          <option>Nv-5555</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label">ID Service :</label>
-      <div class="col-lg-9">
-        <select class="form-control editable">
-          <option>DV-1111</option>
-          <option>DV-2222</option>
-          <option>DV-3333</option>
-          <option>DV-4444</option>
-          <option>Dv-5555</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-lg-3 col-form-label form-control-label"></label>
-      <div class="col-lg-9">
-        <input type="reset" class="btn btn-secondary" value="Cancel">
-        <input type="submit" class="btn btn-primary" value="Add">
-      </div>
-    </div>
-  </form>
+  </div>
 </div>
+
