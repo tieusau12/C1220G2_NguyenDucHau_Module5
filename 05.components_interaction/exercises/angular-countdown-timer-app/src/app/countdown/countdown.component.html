@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="text-center text-danger">Countdown Time</h2>
+  <div class="row mt-5">
+    <div class="row col-12">
+      <div class="col-4"></div>
+      <div class="col-4"><input type="number" [(ngModel)]="countTime"></div>
+      <div class="col-4"></div>
+    </div>
+    <div class="col-4 btn btn-primary">
+      <button (click)="start()">Start</button>
+    </div>
+    <div class="col-4 btn btn-warning">
+      <button (click)="stop()">Stop</button>
+    </div>
+    <div class="col-4 btn btn-danger">
+      <button (click)="reset()">Reset</button>
+    </div>
+    <div class="col-12 mt-3">
+      <p class="text-center">{{message}}</p></div>
+  </div>
+</div>
+
+
+

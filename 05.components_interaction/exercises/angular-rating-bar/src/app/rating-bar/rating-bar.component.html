@@ -11,3 +11,24 @@
     {{ item.value }}
   </div>
 </div>
+
+<hr>
+<hr>
+<h2>My Hearts</h2>
+<ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+  </span>
+</ng-template>
+<ngb-rating   [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+<hr>
+<pre>Rate: <b>{{currentRate}}</b></pre>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 1">1</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 1.5">1.5</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 2">2</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 2.5">2.5</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 3">3</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 3.5">3.5</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 4">4</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 4.5">4.5</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="currentRate = 5">5</button>

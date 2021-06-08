@@ -8,11 +8,11 @@ import {IRatingUnit} from "../i-rating-unit";
 })
 export class RatingBarComponent implements OnInit, OnChanges {
   @Input()
-  max = 10;
+  max:number = 10;
   @Input()
-  ratingValue = 5;
+  ratingValue:number = 5;
   @Input()
-  showRatingValue = true;
+  showRatingValue:boolean = true;
   @Output()
   rateChange = new EventEmitter<number>();
 
@@ -56,5 +56,5 @@ export class RatingBarComponent implements OnInit, OnChanges {
     }
   }
 
-
+  currentRate = 3.14;
 }

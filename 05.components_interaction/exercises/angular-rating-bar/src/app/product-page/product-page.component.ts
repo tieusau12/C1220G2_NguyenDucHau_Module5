@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Product} from "../product";
 
 @Component({
   selector: 'app-product-page',
@@ -6,21 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  public products = new Array();
+  public products: Product[] = [];
   title = 'Products';
   productToUpdate: any;
-  constructor() { }
+  ratingClicked: number = 0;
+  productIdRatingClicked: string = '';
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.products = this.getProducts();
   }
+
   getProducts() {
     return [
-      {'id': '1', 'title': 'Screw Driver', 'price': 400, 'stock': 11},
-      {'id': '2', 'title': 'Nut Volt', 'price': 200, 'stock': 5},
-      {'id': '3', 'title': 'Resistor', 'price': 78, 'stock': 45},
-      {'id': '4', 'title': 'Tractor', 'price': 20000, 'stock': 1},
-      {'id': '5', 'title': 'Roller', 'price': 62, 'stock': 15},
+      {'id': 1, 'title': 'Screw Driver', 'price': 400, 'rating': 3, 'stock': 11},
+      {'id': 2, 'title': 'Nut Bolt', 'price': 200, 'rating': 2, 'stock': 5},
+      {'id': 3, 'title': 'Resistor', 'price': 78, 'rating': 4, 'stock': 45},
+      {'id': 4, 'title': 'Tractor', 'price': 20000, 'rating': 5, 'stock': 1},
+      {'id': 5, 'title': 'Roller', 'price': 62, 'rating': 1, 'stock': 15},
+      {'id': 6, 'title': 'Platen', 'price': 78, 'rating': 1, 'stock': 15},
     ];
   }
 
@@ -29,4 +36,12 @@ export class ProductPageComponent implements OnInit {
     this.productToUpdate.stock = this.productToUpdate.stock + p.updatedStockValue;
   }
 
+  ratingStarClick(clickObj: any): void {
+    const product = this.products.find(((i: any) => i.id === clickObj.productId));
+    if (product) {
+      product.rating = clickObj.rating;
+      this.ratingClicked = clickObj.rating;
+      this.productIdRatingClicked = product.title;
+    }
+  }
 }

@@ -6,6 +6,7 @@
     <th>Id</th>
     <th>Title</th>
     <th>Price</th>
+    <th>Rating</th>
     <th>Stock</th>
     </thead>
     <tbody>
@@ -13,6 +14,9 @@
       <td>{{p.id}}</td>
       <td>{{p.title}}</td>
       <td>{{p.price}}</td>
+      <td>
+        <app-star [rating]="p.rating" [productId]="p.id" (ratingClick)="ratingStarClick($event)"></app-star>
+      </td>
       <td>{{p.stock}}</td>
       <td>
       <td>
@@ -22,4 +26,5 @@
     </tr>
     </tbody>
   </table>
+  <p *ngIf="ratingClicked">The Title {{productIdRatingClicked}} has been given {{ratingClicked}} stars</p>
 </div>
