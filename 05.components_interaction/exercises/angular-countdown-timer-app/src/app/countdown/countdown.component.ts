@@ -43,7 +43,7 @@ export class CountdownComponent implements OnInit {
     this.clearTimer();
     this.intervalId = window.setInterval(() => {
         this.countTime -= 1;
-        if (this.countTime == 0) {
+        if (this.countTime === 0) {
           this.message = "Blast off!";
           this.clearTimer();
         } else {

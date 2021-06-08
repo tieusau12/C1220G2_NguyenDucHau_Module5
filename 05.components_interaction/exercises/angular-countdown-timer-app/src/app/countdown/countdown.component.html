@@ -1,19 +1,19 @@
 <div class="container">
   <h2 class="text-center text-danger">Countdown Time</h2>
   <div class="row mt-5">
-    <div class="row col-12">
-      <div class="col-4"></div>
-      <div class="col-4"><input type="number" [(ngModel)]="countTime"></div>
-      <div class="col-4"></div>
+    <div class="col-12">
+      <div class="form-group">
+        <input class="form-control" type="number" [(ngModel)]="countTime">
+      </div>
     </div>
     <div class="col-4 btn btn-primary">
-      <button (click)="start()">Start</button>
+      <span (click)="start()">Start</span>
     </div>
     <div class="col-4 btn btn-warning">
-      <button (click)="stop()">Stop</button>
+      <span (click)="stop()">Stop</span>
     </div>
     <div class="col-4 btn btn-danger">
-      <button (click)="reset()">Reset</button>
+      <span (click)="reset()">Reset</span>
     </div>
     <div class="col-12 mt-3">
       <p class="text-center">{{message}}</p></div>
