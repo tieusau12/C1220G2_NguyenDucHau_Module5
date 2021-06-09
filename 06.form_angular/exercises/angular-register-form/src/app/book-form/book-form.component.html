@@ -1,0 +1,23 @@
+<h2>Book Form</h2>
+<form autocomplete="off"
+      [formGroup]="bookForm"
+      (ngSubmit)="addBook()">
+  <div class="form-group">
+    <label for="bookName">Book Name</label>
+    <input id="bookName" formControlName="name" type="text" class="form-control">
+    <div>
+      <p style="color: red" *ngIf="bookForm.controls.name.hasError('required')&& bookForm.controls.name.dirty"> Please
+        input name</p>
+      <p style="color: red" *ngIf="bookForm.controls.name.hasError('minlength')&& bookForm.controls.name.dirty">Invalid
+        format name min length =16 </p>
+    </div>
+    <fieldset formGroupName="property">
+      <label for="year">Year</label>
+      <input type="date" id="year" formControlName="year" class="form-control">
+
+      <label for="stars">Stars</label>
+      <input type="text" id="stars" formControlName="stars" class="form-control">
+    </fieldset>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

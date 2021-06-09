@@ -1,0 +1,104 @@
+<div class="card">
+  <h4 class="card-header text-center text-danger">Register Account </h4>
+  <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="first">First Name</label>
+          <input id="first" type="text" formControlName="firstName" class="form-control"
+                 [ngClass]="{ 'is-invalid': submitted && form.firstName.errors }"/>
+          <div *ngIf="submitted && form.firstName.errors" class="invalid-feedback">
+            <div *ngIf="form.firstName.hasError('required')">First Name is
+              required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="last">Last Name</label>
+          <input id="last" type="text" formControlName="lastName" class="form-control"
+                 [ngClass]="{'is-invalid': submitted && form.lastName.errors}"/>
+          <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+            <div *ngIf="form.lastName.hasError('required')">Last Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" type="date" formControlName="dateOfBirth" class="form-control"
+                 [ngClass]="{'is-invalid':submitted &&form.dateOfBirth.errors}">
+          <div *ngIf="submitted && form.dateOfBirth.errors" class="invalid-feedback">
+            <div *ngIf="form.dateOfBirth.hasError('required')">Date of Birth is required</div>
+            <div *ngIf="form.dateOfBirth.hasError('invalid18')">Age must be over 18</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="email">Email</label>
+          <input id="email" type="text" formControlName="email" class="form-control"
+                 [ngClass]="{'is-invalid':submitted &&form.email.errors}">
+          <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+            <div *ngIf="form.email.hasError('required')">Email is required</div>
+            <div *ngIf="form.email.hasError('email')">Email must be a valid email address</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="passWord"> Password</label>
+          <input id="passWord" type="password" formControlName="password" class="form-control"
+                 [ngClass]="{'is-invalid':submitted && form.password.errors}"/>
+          <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+            <div *ngIf="form.password.hasError('required')">Password is required</div>
+            <div *ngIf="form.password.hasError('minlength')">Password must be at least 6 characters</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="confirm"> Password</label>
+          <input id="confirm" type="password" formControlName="confirmPassword" class="form-control"
+                 [ngClass]="{'is-invalid':submitted && form.confirmPassword.errors}"/>
+          <div *ngIf="submitted && form.confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="form.confirmPassword.hasError('required')">Confirm Password is required</div>
+            <div *ngIf="form.confirmPassword.hasError('mustMatch')">Password must match</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <span> Gender : </span>
+          <input class="ml-5" id="male" type="radio" value="male" formControlName="gender"
+                 [ngClass]="{'is-invalid':submitted && form.gender.errors}">
+          <label for="male" class="ml-2" >Male </label>
+          <input id="female" class="ml-5" type="radio" value="female" formControlName="gender"
+                 [ngClass]="{'is-invalid':submitted && form.gender.errors}">
+          <label for="female" class="ml-2">Female </label>
+
+          <div *ngIf="submitted && form.gender.errors" class="invalid-feedback">
+            <div *ngIf="form.gender.hasError('required')">Please select your gender</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="country">Country</label>
+          <select id="country" name="country" formControlName="country" class="form-control" [ngClass]="{'is-invalid': submitted && form.country.errors}">
+            <option value="">------</option>
+            <option value="VN">Việt Nam</option>
+            <option value="USA">American</option>
+            <option value="RUS">Russia</option>
+          </select>
+          <div *ngIf="submitted && form.country.errors" class="invalid-feedback">
+            <div *ngIf="form.country.errors.required">Country is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+               [ngClass]="{ 'is-invalid': submitted && form.acceptTerms.errors }"/>
+        <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+        <div *ngIf="submitted && form.acceptTerms.errors" class="invalid-feedback">Accept the terms is required</div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mr-1">Register</button>
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
