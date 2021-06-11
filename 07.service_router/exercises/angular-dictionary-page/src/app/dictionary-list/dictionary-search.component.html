@@ -1,0 +1,17 @@
+<h1 style="color: red">List Keyword </h1>
+<table style="text-decoration: none">
+  <tr>
+    <td>STT</td>
+    <td>Word</td>
+    <td>Translation</td>
+  </tr>
+  <tr *ngFor="let w of dictionary; index as i ">
+    <td>{{i + 1 }}</td>
+    <td>{{w.englishWord}}</td>
+    <td>
+      <button [routerLink]="['/dictionary/search/',w.englishWord]">translate</button>
+    </td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>
