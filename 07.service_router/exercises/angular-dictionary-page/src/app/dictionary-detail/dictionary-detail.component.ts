@@ -15,14 +15,13 @@ export class DictionaryDetailComponent implements OnInit {
               private activatedRouter: ActivatedRoute) {
     // const wordFromURL = this.activatedRouter.snapshot.params.englishWord;
     // this.vietnameseMean = this.dictionaryService.findKeyWord(wordFromURL);
-
   }
 
   ngOnInit(): void {
     this.activatedRouter.paramMap.subscribe((paramMap: ParamMap) =>{
       const englishWord = paramMap.get('englishWord');
       // @ts-ignore
-      this.vietnameseMean = this.dictionaryService.findKeyWord(englishWord);
+      this.vietnameseMean = this.dictionaryService.findKeyWord(englishWord).vietnameseMean;
     })
   }
 
