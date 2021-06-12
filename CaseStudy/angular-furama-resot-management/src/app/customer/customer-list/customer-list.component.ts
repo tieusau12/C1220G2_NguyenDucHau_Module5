@@ -34,8 +34,7 @@ export class CustomerListComponent implements OnInit {
 
   deleteCustomer(id: number) {
     this.customerService.deleteCustomer(id).subscribe(() => {
-      alert("Delete thanh cong");
-      this.router.navigateByUrl('/customer/list');
+     this.getAll();
     }, e => {
       console.log(e);
     });

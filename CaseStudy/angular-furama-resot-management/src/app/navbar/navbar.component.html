@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="">Furama</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Dịch vụ</a>
+      </li>
+      <li class="nav-item dropdown">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-" id="dropdownBasic1" ngbDropdownToggle>Customer</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem routerLink="/customer/list">Customer List</button>
+            <button ngbDropdownItem routerLink="/customer/create">Add New Customer</button>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownService" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Dịch Vụ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item">Danh Sách Dịch Vụ</a>
+          <a class="dropdown-item" href="#">Thêm dịch vụ</a>
+          <a class="dropdown-item">Villa</a>
+          <a class="dropdown-item">House</a>
+          <a class="dropdown-item">Room</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEmployee" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Nhân Viên
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item">Thêm mới</a>
+          <a class="dropdown-item">Danh sách</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownContract" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Hợp Đồng
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item">Thêm mới Hợp Đồng</a>
+          <a class="dropdown-item">Thêm mới Hợp Đồng Chi Tiết</a>
+          <a class="dropdown-item">Danh sách Hợp Đồng</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>

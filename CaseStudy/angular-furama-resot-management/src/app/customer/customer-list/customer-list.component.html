@@ -9,10 +9,11 @@
         <th scope="col">Customer Name</th>
         <th scope="col">Phone</th>
         <th scope="col">Address</th>
+        <th scope="col">Date of Birth</th>
         <th scope="col">Edit</th>
         <th scope="col">View</th>
         <th scope="col">Delete</th>
-        <th scope="col">Test</th>
+        <th scope="col">Test Modal = false :(</th>
       </tr>
       </thead>
       <tbody>
@@ -22,6 +23,7 @@
         <td>{{cus.name}}</td>
         <td>{{cus.phone}}</td>
         <td>{{cus.address}}</td>
+        <td>{{cus.dateOfBirth | date:'dd/MM/yyyy'}}</td>
         <td>
           <button class="btn btn-primary" [routerLink]="['/customer/edit', cus.id]">Edit</button>
         </td>
@@ -33,6 +35,7 @@
         </td>
         <td>
           <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Delete</button>
+<!--          modal-->
           <ng-template #content let-modal>
             <div class="modal-header">
               <h4 class="modal-title" id="modal-basic-title">Delete Customer</h4>
@@ -45,13 +48,16 @@
                 <div class="form-group">
                   <label>Do you want delete {{cus.name}} ?</label>
                   <div class="input-group">
-                    <p>Hello</p>
+                    <p>ID Customer : {{cus.idCustomer}}</p>
                   </div>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+              <button type="button" class="btn btn-outline-dark"  (click)="modal.close('Kho qua anh oi')">Save</button>
+              <button type="button" class="btn btn-outline-danger" aria-label="Close" (click)="modal.dismiss('Cancel')">
+                <span aria-hidden="true">Cancel</span>
+              </button>
             </div>
           </ng-template>
         </td>

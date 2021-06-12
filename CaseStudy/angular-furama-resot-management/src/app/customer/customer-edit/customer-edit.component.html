@@ -2,7 +2,7 @@
   <div class="card">
     <h2 class="card-header text-center text-danger">Update Customer </h2>
     <div class="card-body">
-      <form [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)">
+      <form [formGroup]="customerForm" *ngIf="customerForm" (ngSubmit)="updateCustomer(id)">
         <div class="form-row">
           <label for="idCustomer" class="col-form-label form-control-label">ID Customer:</label>
           <input id="idCustomer" class="form-control" formControlName="idCustomer" type="text"
@@ -24,10 +24,10 @@
 
         <div class="form-row">
           <span> Gender : </span>
-          <input class="ml-5" id="male" type="radio" value="male" formControlName="gender"
+          <input class="ml-5" id="male" type="radio" value="Male" formControlName="gender"
                  [ngClass]="{'is-invalid':submitted && form.gender.errors}">
           <label for="male" class="ml-2">Male </label>
-          <input id="female" class="ml-5" type="radio" value="female" formControlName="gender"
+          <input id="female" class="ml-5" type="radio" value="Female" formControlName="gender"
                  [ngClass]="{'is-invalid':submitted && form.gender.errors}">
           <label for="female" class="ml-2">Female </label>
 
