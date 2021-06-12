@@ -1,0 +1,88 @@
+{
+  "customers": [
+    {
+      "idCustomer": "KH-1212",
+      "name": "Nguyễn Đức Hậu",
+      "gender": "male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0909999999",
+      "email": "duchau123@gmail.com",
+      "address": "duchau@gmail.com",
+      "typeCustomer": "Diamond",
+      "id": 2
+    },
+    {
+      "idCustomer": "KH-7777",
+      "name": "Nguyễn Đức Hậu",
+      "gender": "male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0902785771",
+      "email": "duchau@gmail.com",
+      "address": "Hello",
+      "typeCustomer": "Diamond",
+      "id": 4
+    },
+    {
+      "idCustomer": "KH-4546",
+      "name": "Duc Sang",
+      "gender": "male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0902785771",
+      "email": "duchau@gmail.com",
+      "address": "Quang Nam",
+      "typeCustomer": "Silver",
+      "id": 5
+    },
+    {
+      "idCustomer": "KH-1222",
+      "name": "Thanh Cong",
+      "gender": "Male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0772785771",
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "typeCustomer": "Diamond",
+      "id": 6
+    },
+    {
+      "idCustomer": "KH-1242",
+      "name": "Gia Dong",
+      "gender": "Male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0772785771",
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "typeCustomer": "Diamond",
+      "id": 7
+    },
+    {
+      "idCustomer": "KH-1142",
+      "name": "Sang Le",
+      "gender": "Male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0772785771",
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "typeCustomer": "Diamond",
+      "id": 8
+    },
+    {
+      "idCustomer": "KH-2242",
+      "name": "Quoc Tuan",
+      "gender": "Male",
+      "dateOfBirth": "06/04/2005",
+      "idCard": "201732015",
+      "phone": "0772785771",
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "typeCustomer": "Diamond",
+      "id": 9
+    }
+  ]
+}

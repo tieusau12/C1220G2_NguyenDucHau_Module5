@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="card">
+    <h2 class="card-header text-center text-danger"> Customer List</h2>
+    <div class="card-body">
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <label for="idCustomer" class="col-form-label form-control-label">ID Customer:</label>
+          <input id="idCustomer" class="form-control" formControlName="idCustomer" type="text"
+                 [ngClass]="{'is-invalid': submitted && form.idCustomer.errors}"/>
+          <div *ngIf="submitted && form.idCustomer.errors" class="invalid-feedback">
+            <div *ngIf="form.idCustomer.hasError('required')">ID Customer is required</div>
+            <div *ngIf="form.idCustomer.hasError('pattern')">ID Customer in correct format KH-XXXX</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="nameCustomer" class=" col-form-label form-control-label">Customer name :</label>
+          <input id="nameCustomer" class="form-control" type="text" formControlName="name" placeholder="Enter name"
+                 [ngClass]="{'is-invalid': submitted && form.name.errors}"/>
+          <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+            <div *ngIf="form.name.hasError('required')">Customer Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <span> Gender : </span>
+          <input class="ml-5" id="male" type="radio" value="male" formControlName="gender"
+                 [ngClass]="{'is-invalid':submitted && form.gender.errors}">
+          <label for="male" class="ml-2">Male </label>
+          <input id="female" class="ml-5" type="radio" value="female" formControlName="gender"
+                 [ngClass]="{'is-invalid':submitted && form.gender.errors}">
+          <label for="female" class="ml-2">Female </label>
+
+          <div *ngIf="submitted && form.gender.errors" class="invalid-feedback">
+            <div *ngIf="form.gender.hasError('required')">Please select your gender</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="dob">Date of Birth:</label>
+          <input id="dob" type="date" formControlName="dateOfBirth" class="form-control"
+                 [ngClass]="{'is-invalid':submitted &&form.dateOfBirth.errors}">
+          <div *ngIf="submitted && form.dateOfBirth.errors" class="invalid-feedback">
+            <div *ngIf="form.dateOfBirth.hasError('required')">Date of Birth is required</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="idCard" class="col-form-label form-control-label">ID Card :</label>
+          <input id="idCard" class="form-control" formControlName="idCard" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.idCard.errors}"/>
+          <div *ngIf="submitted &&form.idCard.errors" class="invalid-feedback">
+            <div *ngIf="form.idCard.hasError('required')">ID Card is required</div>
+            <div *ngIf="form.idCard.hasError('pattern')">ID Card in correct format 9 Number</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="phone" class=" col-form-label form-control-label">Phone Number :</label>
+          <input id="phone" class="form-control" formControlName="phone" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.phone.errors}"/>
+          <div *ngIf="submitted &&form.phone.errors" class="invalid-feedback">
+            <div *ngIf="form.phone.hasError('required')">Phone Number is required</div>
+            <div *ngIf="form.phone.hasError('pattern')">Phone Number in correct format (090|091|(+84)</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="email" class=" col-form-label form-control-label">Email :</label>
+          <input id="email" class="form-control" formControlName="email" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.email.errors}"/>
+          <div *ngIf="submitted &&form.email.errors" class="invalid-feedback">
+            <div *ngIf="form.email.hasError('required')">Email is required</div>
+            <div *ngIf="form.email.hasError('email')">Email must be a valid email address</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="address" class="col-form-label form-control-label">Address :</label>
+          <input id="address" class="form-control" formControlName="address" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.address.errors}"/>
+          <div *ngIf="submitted &&form.address.errors" class="invalid-feedback">
+            <div *ngIf="form.address.hasError('required')">Address is required</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="typeCus" class="col-form-label form-control-label">Types Customer :</label>
+          <select id="typeCus" class="form-control" formControlName="typeCustomer"
+                  [ngClass]="{'is-invalid': submitted && form.typeCustomer.errors}">
+            <option value="">------</option>
+            <option value="Diamond">Diamond</option>
+            <option value="Platinum">Platinum</option>
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+            <option value="Member">Member</option>
+          </select>
+          <div *ngIf="submitted && form.typeCustomer.errors" class="invalid-feedback">
+            <div *ngIf="form.typeCustomer.errors.required">Type Customer is required</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1">Add</button>
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
