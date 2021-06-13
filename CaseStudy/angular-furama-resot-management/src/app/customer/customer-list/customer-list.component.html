@@ -13,7 +13,6 @@
         <th scope="col">Edit</th>
         <th scope="col">View</th>
         <th scope="col">Delete</th>
-        <th scope="col">Test Modal = false :(</th>
       </tr>
       </thead>
       <tbody>
@@ -25,16 +24,14 @@
         <td>{{cus.address}}</td>
         <td>{{cus.dateOfBirth | date:'dd/MM/yyyy'}}</td>
         <td>
-          <button class="btn btn-primary" [routerLink]="['/customer/edit', cus.id]">Edit</button>
+          <button class="btn btn-warning" [routerLink]="['/customer/edit', cus.id]">Edit</button>
         </td>
         <td>
           <button class="btn btn-primary">View</button>
         </td>
+
         <td>
-          <button class="btn btn-primary" role="button" (click)="deleteCustomer(cus.id)">Delete</button>
-        </td>
-        <td>
-          <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Delete</button>
+          <button class="btn btn-danger" (click)="open(content)">Delete</button>
 <!--          modal-->
           <ng-template #content let-modal>
             <div class="modal-header">
@@ -54,7 +51,7 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark"  (click)="modal.close('Kho qua anh oi')">Save</button>
+              <button type="button" class="btn btn-outline-dark"  (click)="modal.dismiss('Cancel')" (click)="deleteCustomer(cus.id)">Save</button>
               <button type="button" class="btn btn-outline-danger" aria-label="Close" (click)="modal.dismiss('Cancel')">
                 <span aria-hidden="true">Cancel</span>
               </button>

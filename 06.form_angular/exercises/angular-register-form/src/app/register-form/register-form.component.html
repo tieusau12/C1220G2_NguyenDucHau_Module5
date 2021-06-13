@@ -67,7 +67,7 @@
           <span> Gender : </span>
           <input class="ml-5" id="male" type="radio" value="male" formControlName="gender"
                  [ngClass]="{'is-invalid':submitted && form.gender.errors}">
-          <label for="male" class="ml-2" >Male </label>
+          <label for="male" class="ml-2">Male </label>
           <input id="female" class="ml-5" type="radio" value="female" formControlName="gender"
                  [ngClass]="{'is-invalid':submitted && form.gender.errors}">
           <label for="female" class="ml-2">Female </label>
@@ -78,7 +78,8 @@
         </div>
         <div class="form-group col">
           <label for="country">Country</label>
-          <select id="country" name="country" formControlName="country" class="form-control" [ngClass]="{'is-invalid': submitted && form.country.errors}">
+          <select id="country" name="country" formControlName="country" class="form-control"
+                  [ngClass]="{'is-invalid': submitted && form.country.errors}">
             <option value="">------</option>
             <option value="VN">Việt Nam</option>
             <option value="USA">American</option>

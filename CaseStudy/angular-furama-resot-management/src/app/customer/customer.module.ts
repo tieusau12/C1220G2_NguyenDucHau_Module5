@@ -7,13 +7,15 @@ import {CustomerCreateComponent} from './customer-create/customer-create.compone
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgbDatepickerModule, NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
+import { CustomerViewComponent } from './customer-view/customer-view.component';
 
 
 @NgModule({
   declarations: [
     CustomerListComponent,
     CustomerCreateComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    CustomerViewComponent
   ],
   exports: [
     CustomerListComponent

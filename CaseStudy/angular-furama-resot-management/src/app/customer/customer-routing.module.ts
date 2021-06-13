@@ -14,6 +14,10 @@ const routes: Routes = [{
   {
     path: 'edit/:id',
     component: CustomerEditComponent
+  },
+  {
+    path: 'view/:id',
+    component: CustomerEditComponent
   }];
 
 @NgModule({

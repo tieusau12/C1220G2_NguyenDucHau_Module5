@@ -72,7 +72,7 @@ export class CustomerEditComponent implements OnInit {
 
   onReset() {
     this.submitted = false;
-    this.customerForm.reset();
+    this.router.navigateByUrl('/customer/list')
   }
 
   getAllCustomerType() {

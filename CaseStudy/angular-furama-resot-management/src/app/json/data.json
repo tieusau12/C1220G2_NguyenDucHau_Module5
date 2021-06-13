@@ -1,18 +1,6 @@
 {
   "customers": [
     {
-      "idCustomer": "KH-7777",
-      "name": "Nguyễn Đức Hậu",
-      "gender": "Male",
-      "dateOfBirth": "2005-06-21",
-      "idCard": "201732015",
-      "phone": "0902785771",
-      "email": "duchau@gmail.com",
-      "address": "Hello",
-      "customerType": "Silver",
-      "id": 4
-    },
-    {
       "idCustomer": "KH-4546",
       "name": "Duc Sang",
       "gender": "Male",
@@ -21,7 +9,7 @@
       "phone": "0902785771",
       "email": "duchau@gmail.com",
       "address": "Quang Nam",
-      "customerType": "Silver",
+      "customerType": "Gold",
       "id": 5
     },
     {
@@ -47,6 +35,54 @@
       "address": "Đà Nẵng",
       "customerType": "Diamond",
       "id": 8
+    },
+    {
+      "idCustomer": "KH-1111",
+      "name": "Duc Sang",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0902785771",
+      "email": "duchau@gmail.com",
+      "address": "Quang Nam",
+      "customerType": "Silver",
+      "id": 9
+    },
+    {
+      "idCustomer": "KH-2222",
+      "name": "Duc Sang",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0902785771",
+      "email": "duchau@gmail.com",
+      "address": "Quang Nam",
+      "customerType": "Silver",
+      "id": 10
+    },
+    {
+      "idCustomer": "KH-3333",
+      "name": "Duc Đông",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0902785771",
+      "email": "duchau@gmail.com",
+      "address": "Quang Nam",
+      "customerType": "Silver",
+      "id": 11
+    },
+    {
+      "idCustomer": "KH-4444",
+      "name": "Đức Kha",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0902785771",
+      "email": "duchau@gmail.com",
+      "address": "Quang Nam",
+      "customerType": "Silver",
+      "id": 12
     }
   ],
   "customerType": [

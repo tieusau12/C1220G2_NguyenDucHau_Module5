@@ -1,0 +1,18 @@
+//1. cai dat json server
+npm install -g json-server
+
+//2. tao file data.json
+
+//3. chay server
+json-server --watch data.json
+
+json-server --watch student.json
+
+
+ng generate module app-routing --flat --module=app
+
+
+ng g m <ten module>
+ng g c <ten component>
+ng g i <ten interface>
+ng g s <ten service>

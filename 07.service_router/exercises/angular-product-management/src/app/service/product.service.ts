@@ -56,10 +56,7 @@ export class ProductService {
   }
 
   deleteProduct(id: number) {
-    // this.products = this.products.filter(product => {
-    //   return product.id !== id;
-    // });
-    let product = this.findById(id)
+    let product = this.findById(id);
     if (product) {
       let index = this.products.indexOf(product);
       this.products.splice(index, 1);

@@ -81,21 +81,23 @@
             <div *ngIf="form.address.hasError('required')">Address is required</div>
           </div>
         </div>
+
         <div class="form-row">
           <label for="customerType" class="col-form-label form-control-label">Types Customer :</label>
           <select id="customerType" class="form-control" formControlName="customerType"
-                  [ngClass]="{'is-invalid': submitted && form.typeCustomer.errors}">
+                  [ngClass]="{'is-invalid': submitted && form.customerType.errors}">
             <option value="" disabled>Choose customer type</option>
             <option [ngValue]="c.name" *ngFor="let c of customerTypes">
               {{c.name}}
             </option>
           </select>
-          <div *ngIf="submitted && form.typeCustomer.errors" class="invalid-feedback">
-            <div *ngIf="form.typeCustomer.errors.required">Type Customer is required</div>
+          <div *ngIf="submitted && form.customerType.errors" class="invalid-feedback">
+            <div *ngIf="form.customerType.errors.required">Type Customer is required</div>
           </div>
         </div>
+
         <div class="text-center">
-          <button class="btn btn-primary mr-1">Add</button>
+          <button class="btn btn-primary mr-1">Update</button>
           <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
         </div>
       </form>
