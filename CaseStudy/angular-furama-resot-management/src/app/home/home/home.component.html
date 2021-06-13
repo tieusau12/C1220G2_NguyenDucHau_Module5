@@ -1,21 +1,31 @@
-<div class="row">
-  <div class="container-fluid">
-    <ngb-carousel #carousel [interval]="100000" [pauseOnHover]="pauseOnHover"
-                  [pauseOnFocus]="pauseOnFocus"
-                  (slide)="onSlide($event)">
-      <ng-template ngbSlide *ngFor="let img of images; index as i">
-        <div class="carousel-caption">
-          <h3>Wellcome to  Furama Resort</h3>
+<div class="container">
 
-        </div>
-        <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
-          <div class="picsum-img-wrapper">
-            <img [src]="img" alt="My image {{i + 1}} description">
-          </div>
-        </a>
-      </ng-template>
-    </ngb-carousel>
-  </div>
+   <ngb-carousel>
+     <ng-template ngbSlide>
+       <div class="picsum-img-wrapper">
+         <img src="assets/images/furama1.jpg" alt="Random first slide">
+       </div>
+       <div class="carousel-caption">
+         <h1 style="color:rebeccapurple">WellCome to Furama Resort</h1>
+         <h4>Furama Photos</h4>
+       </div>
+     </ng-template>
+     <ng-template ngbSlide>
+       <div class="picsum-img-wrapper">
+         <img src="assets/images/furama2.jpg" alt="Random second slide">
+       </div>
+       <div class="carousel-caption">
+         <h1 style="color:rebeccapurple">WellCome to Furama Resort</h1>
+       </div>
+     </ng-template>
+     <ng-template ngbSlide>
+       <div class="picsum-img-wrapper">
+         <img src="assets/images/furama3.jpg" alt="Random third slide">
+       </div>
+       <div class="carousel-caption">
+         <h1 style="color:rebeccapurple">WellCome to Furama Resort</h1>
+       </div>
+     </ng-template>
+   </ngb-carousel>
 </div>
-
 

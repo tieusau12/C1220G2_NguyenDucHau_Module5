@@ -9,7 +9,7 @@
       "phone": "0902785771",
       "email": "duchau@gmail.com",
       "address": "Hello",
-      "typeCustomer": "Diamond",
+      "customerType": "Silver",
       "id": 4
     },
     {
@@ -21,23 +21,104 @@
       "phone": "0902785771",
       "email": "duchau@gmail.com",
       "address": "Quang Nam",
-      "typeCustomer": "Silver",
+      "customerType": "Silver",
       "id": 5
     },
     {
       "idCustomer": "KH-2242",
       "name": "Quoc Tuan",
       "gender": "Male",
-      "dateOfBirth": "06/04/2005",
+      "dateOfBirth": "2005-06-21",
       "idCard": 201732015,
       "phone": "0772785771",
       "email": "duchau@gmail.com",
       "address": "Đà Nẵng",
-      "typeCustomer": "Diamond",
+      "customerType": "Diamond",
       "id": 6
     },
     {
       "idCustomer": "KH-2262",
+      "name": "Quoc Tuan",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": 201732015,
+      "phone": "0772785771",
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "Diamond",
+      "id": 8
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "idEmployee": "NV-1111",
+      "name": "Nguyen Duc Hau",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0772785499",
+      "salary": 7000,
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "level": "Doctor",
+      "position": "Director",
+      "humanResource": "Kitchen"
+    },
+    {
+      "id": 2,
+      "idEmployee": "NV-2222",
+      "name": "Le Duc Sang",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0772785499",
+      "salary": 7000,
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "level": "Doctor",
+      "position": "Director",
+      "humanResource": "Kitchen"
+    },
+    {
+      "id": 3,
+      "idEmployee": "NV-1111",
+      "name": "Nguyen Duc Dong",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0772785499",
+      "salary": 7000,
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "level": "Doctor",
+      "position": "Director",
+      "humanResource": "Kitchen"
+    },
+    {
+      "idCustomer": "KH-3392",
       "name": "Quoc Tuan",
       "gender": "Male",
       "dateOfBirth": "06/04/2005",
@@ -46,7 +127,22 @@
       "email": "duchau@gmail.com",
       "address": "Đà Nẵng",
       "typeCustomer": "Diamond",
-      "id": 8
+      "id": 4
+    },
+    {
+      "idEmployee": "NV-9999",
+      "name": "Nguyen Duc Hau",
+      "gender": "Male",
+      "dateOfBirth": "2005-06-21",
+      "idCard": "201732015",
+      "phone": "0772785499",
+      "salary": 7000,
+      "email": "duchau@gmail.com",
+      "address": "Đà Nẵng",
+      "level": "Doctor",
+      "position": "Director",
+      "humanResource": "Kitchen",
+      "id": 5
     }
   ]
 }

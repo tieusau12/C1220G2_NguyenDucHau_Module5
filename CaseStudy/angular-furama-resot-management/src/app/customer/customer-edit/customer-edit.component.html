@@ -82,15 +82,13 @@
           </div>
         </div>
         <div class="form-row">
-          <label for="typeCus" class="col-form-label form-control-label">Types Customer :</label>
-          <select id="typeCus" class="form-control" formControlName="typeCustomer"
+          <label for="customerType" class="col-form-label form-control-label">Types Customer :</label>
+          <select id="customerType" class="form-control" formControlName="customerType"
                   [ngClass]="{'is-invalid': submitted && form.typeCustomer.errors}">
-            <option value="">------</option>
-            <option value="Diamond">Diamond</option>
-            <option value="Platinum">Platinum</option>
-            <option value="Gold">Gold</option>
-            <option value="Silver">Silver</option>
-            <option value="Member">Member</option>
+            <option value="" disabled>Choose customer type</option>
+            <option [ngValue]="c.name" *ngFor="let c of customerTypes">
+              {{c.name}}
+            </option>
           </select>
           <div *ngIf="submitted && form.typeCustomer.errors" class="invalid-feedback">
             <div *ngIf="form.typeCustomer.errors.required">Type Customer is required</div>
