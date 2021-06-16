@@ -8,6 +8,7 @@ import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgbDatepickerModule, NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 import { CustomerViewComponent } from './customer-view/customer-view.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CustomerViewComponent } from './customer-view/customer-view.component';
     CustomerListComponent,
     CustomerCreateComponent,
     CustomerEditComponent,
-    CustomerViewComponent
+    CustomerViewComponent,
+    SearchFilterPipe
   ],
   exports: [
     CustomerListComponent

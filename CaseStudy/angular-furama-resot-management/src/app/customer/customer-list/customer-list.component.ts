@@ -11,6 +11,9 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
+  nameSearch: string = '';
+  idCustomerSearch: string = '';
+  emailSearch: string = '';
   page = 3;
   pageSize = 5;
   collectionSize: number = 0;
