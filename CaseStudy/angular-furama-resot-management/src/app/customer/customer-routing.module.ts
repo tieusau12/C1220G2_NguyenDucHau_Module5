@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CustomerListComponent} from "./customer-list/customer-list.component";
 import {CustomerCreateComponent} from "./customer-create/customer-create.component";
 import {CustomerEditComponent} from "./customer-edit/customer-edit.component";
+import {CustomerViewComponent} from "./customer-view/customer-view.component";
 
 const routes: Routes = [{
   path: 'list',
@@ -17,7 +18,7 @@ const routes: Routes = [{
   },
   {
     path: 'view/:id',
-    component: CustomerEditComponent
+    component: CustomerViewComponent
   }];
 
 @NgModule({

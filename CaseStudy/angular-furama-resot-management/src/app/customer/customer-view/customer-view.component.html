@@ -1,1 +1,58 @@
-<p>customer-view works!</p>
+<div class="container">
+  <div class="card">
+    <h2 class="card-header text-center text-primary">View Customer </h2>
+    <div class="card-body">
+      <form [formGroup]="customerForm" *ngIf="customerForm">
+        <div class="form-row">
+          <label for="idCustomer" class="col-form-label form-control-label">ID Customer:</label>
+          <input id="idCustomer" readonly  class="form-control" formControlName="idCustomer" type="text" />
+        </div>
+        <div class="form-row">
+          <label for="nameCustomer" class=" col-form-label form-control-label">Customer name :</label>
+          <input id="nameCustomer" readonly class="form-control" type="text" formControlName="name" placeholder="Enter name"/>
+        </div>
+
+        <div class="form-row">
+          <span> Gender : </span>
+          <input class="ml-5" id="male" type="radio" value="Male" formControlName="gender" readonly>
+          <label for="male" class="ml-2" >Male </label>
+          <input id="female" class="ml-5" type="radio" value="Female" formControlName="gender" readonly>
+          <label for="female" class="ml-2" >Female </label>
+        </div>
+        <div class="form-row">
+          <label for="dob">Date of Birth:</label>
+          <input id="dob" type="date" formControlName="dateOfBirth" class="form-control" readonly>
+        </div>
+        <div class="form-row">
+          <label for="idCard" class="col-form-label form-control-label">ID Card :</label>
+          <input id="idCard" class="form-control" formControlName="idCard" type="text" readonly/>
+        </div>
+        <div class="form-row">
+          <label for="phone" class=" col-form-label form-control-label">Phone Number :</label>
+          <input id="phone" class="form-control" formControlName="phone" type="text" readonly/>
+        </div>
+        <div class="form-row">
+          <label for="email" class=" col-form-label form-control-label">Email :</label>
+          <input id="email" class="form-control" formControlName="email" type="text" readonly/>
+        </div>
+        <div class="form-row">
+          <label for="address" class="col-form-label form-control-label">Address :</label>
+          <input id="address" class="form-control" formControlName="address" type="text" readonly/>
+        </div>
+        <div class="form-row">
+          <label for="customerType" class="col-form-label form-control-label">Types Customer :</label>
+          <select id="customerType" class="form-control" formControlName="customerType" readonly>
+            <option value="" disabled>Choose customer type</option>
+            <option [ngValue]="c.name" *ngFor="let c of customerTypes">
+              {{c.name}}
+            </option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

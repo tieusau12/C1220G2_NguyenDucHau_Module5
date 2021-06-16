@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Customer} from "../../model/customer";
 import {CustomerService} from "../../service/customer.service";
-import {Router} from "@angular/router";
-import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-customer-list',
@@ -11,13 +11,12 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
-  page = 4;
-  pageSize = 4;
+  page = 3;
+  pageSize = 5;
   collectionSize: number = 0;
   closeResult: string = '';
 
   constructor(private customerService: CustomerService,
-              private router: Router,
               private modalService: NgbModal) {
   }
 

@@ -16,3 +16,9 @@ ng g m <ten module>
 ng g c <ten component>
 ng g i <ten interface>
 ng g s <ten service>
+  this.current += 1;
+  
+  
+  npm install bootstrap@4.6.0
+  
+  npm install jquery@3.6.0
