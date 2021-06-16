@@ -14,12 +14,12 @@
     },
     {
       "idCustomer": "KH-2242",
-      "name": "Quoc Tuan",
+      "name": "Thanh Công",
       "gender": "Male",
-      "dateOfBirth": "2005-06-21",
-      "idCard": 201732015,
-      "phone": "0772785771",
-      "email": "duchau@gmail.com",
+      "dateOfBirth": "1991-06-21",
+      "idCard": "201732012",
+      "phone": "0907894562",
+      "email": "thanhcong@gmail.com",
       "address": "Đà Nẵng",
       "customerType": "Diamond",
       "id": 6
@@ -38,26 +38,26 @@
     },
     {
       "idCustomer": "KH-1111",
-      "name": "Duc Sang",
+      "name": "Đức Hậu",
       "gender": "Male",
-      "dateOfBirth": "2005-06-21",
+      "dateOfBirth": "2005-02-19",
       "idCard": "201732015",
-      "phone": "0902785771",
-      "email": "duchau@gmail.com",
-      "address": "Quang Nam",
+      "phone": "0902999999",
+      "email": "duchau212@gmail.com",
+      "address": "Đà Nẵng",
       "customerType": "Silver",
       "id": 9
     },
     {
       "idCustomer": "KH-2222",
-      "name": "Duc Sang",
+      "name": "Gia Đông",
       "gender": "Male",
-      "dateOfBirth": "2005-06-21",
-      "idCard": "201732015",
-      "phone": "0902785771",
-      "email": "duchau@gmail.com",
-      "address": "Quang Nam",
-      "customerType": "Silver",
+      "dateOfBirth": "1995-09-15",
+      "idCard": "201738787",
+      "phone": "0902787777",
+      "email": "giadong212@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "Platinum",
       "id": 10
     },
     {
@@ -83,6 +83,18 @@
       "address": "Quang Nam",
       "customerType": "Silver",
       "id": 12
+    },
+    {
+      "idCustomer": "KH-2999",
+      "name": "Nguyen Huy",
+      "gender": "male",
+      "dateOfBirth": "2000-06-12",
+      "idCard": "201765489",
+      "phone": "0909789546",
+      "email": "nguyenhuy@gmail.com",
+      "address": "Da Nang",
+      "customerType": "Gold",
+      "id": 13
     }
   ],
   "customerType": [

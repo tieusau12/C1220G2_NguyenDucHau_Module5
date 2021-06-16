@@ -18,6 +18,8 @@ export class CustomerListComponent implements OnInit {
   pageSize = 5;
   collectionSize: number = 0;
   closeResult: string = '';
+  emailAPI: string = '';
+  nameAPI: string = '';
 
   constructor(private customerService: CustomerService,
               private modalService: NgbModal) {
@@ -48,5 +50,10 @@ export class CustomerListComponent implements OnInit {
     })
   }
 
+  filter(nameAPI: string, emailAPI: string) {
+    this.customerService.customerFilter(nameAPI, emailAPI).subscribe(result => {
+      this.customers = result;
+    });
+  }
 
 }

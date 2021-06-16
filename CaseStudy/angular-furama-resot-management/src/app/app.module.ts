@@ -9,6 +9,8 @@ import {CustomerModule} from "./customer/customer.module";
 import {HttpClientModule} from "@angular/common/http";
 import {FooterComponent} from './footer/footer.component';
 import {NavbarComponent} from "./navbar/navbar.component";
+import {Toast, ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import {NavbarComponent} from "./navbar/navbar.component";
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
     RouterModule,

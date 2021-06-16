@@ -4,6 +4,7 @@ import {CustomerService} from "../../service/customer.service";
 import {Router} from "@angular/router";
 import {CustomerType} from "../../model/customer-type";
 import {CustomerTypeService} from "../../service/customer-type.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-customer-create',
@@ -13,12 +14,13 @@ import {CustomerTypeService} from "../../service/customer-type.service";
 export class CustomerCreateComponent implements OnInit {
   customerForm!: FormGroup;
   submitted: boolean = false;
-  customerTypes: CustomerType[]=[];
+  customerTypes: CustomerType[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private customerService: CustomerService,
               private router: Router,
-              private customerTypeService: CustomerTypeService) {
+              private customerTypeService: CustomerTypeService,
+              private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -40,6 +42,10 @@ export class CustomerCreateComponent implements OnInit {
     return this.customerForm.controls;
   }
 
+  callToastr() {
+    this.toastrService.success('Successful', 'Create new Customer')
+  }
+
   onSubmit() {
     this.submitted = true;
     if (this.customerForm.invalid) {
@@ -47,6 +53,7 @@ export class CustomerCreateComponent implements OnInit {
     }
     const customer = this.customerForm.value;
     this.customerService.saveCustomer(customer).subscribe(() => {
+      this.callToastr();
       this.router.navigateByUrl('/customer/list');
     });
 
@@ -56,8 +63,9 @@ export class CustomerCreateComponent implements OnInit {
     this.submitted = false;
     this.customerForm.reset();
   }
-  getAllCustomerType(){
-    this.customerTypeService.getAll().subscribe(customerTypes =>{
+
+  getAllCustomerType() {
+    this.customerTypeService.getAll().subscribe(customerTypes => {
       this.customerTypes = customerTypes;
     })
   }
