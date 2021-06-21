@@ -23,3 +23,7 @@ ng g pipe customers/search-filter
 thông báo sucessfull
 npm install ngx-toastr
 npm i @angular/animations
+---   ToastrModule.forRoot(),
+    BrowserAnimationsModule, 
+    imports thêm 2 thằng này trong app.module.ts,
+    cấu hình trong angular.json

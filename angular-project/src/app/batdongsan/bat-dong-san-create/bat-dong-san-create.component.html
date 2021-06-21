@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="card">
+    <h1 class="card-header text-center text-danger"> Them moi Bat Dong San</h1>
+    <div class="card-body">
+      <form [formGroup]="batdongsanForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Danh muc</label>
+          <select name="danhMuc" formControlName="danhMuc" class="form-control">
+            <option value="">------</option>
+            <option value="Nha Dat">Nha Dat</option>
+            <option value="Nha O">Nha O</option>
+            <option value="Chung Cu">Chung Cu</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Vung Mien</label>
+          <select name="vungMien" formControlName="vungMien" class="form-control">
+            <option value="">------</option>
+            <option value="Ha Noi">Ha Noi</option>
+            <option value="Da Nang">Da Nang</option>
+            <option value="Ho Chi Minh">Ho Chi Minh</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span> Ban la : </span>
+          <input class="ml-5" type="radio" value="Ca Nhan" formControlName="nguoiMua">
+          <label class="ml-2">Ca Nhan</label>
+          <input class="ml-5" type="radio" value="Cong Ty" formControlName="nguoiMua">
+          <label class="ml-2">Cong TY</label>
+        </div>
+        <div class="form-row">
+          <span> Ban Dang Tin: </span>
+          <input class="ml-1" type="radio" value="Can ban" formControlName="loaiBaiViet">
+          <label class="ml-2">Can ban</label>
+          <input class="ml-5" type="radio" value="Can mua" formControlName="loaiBaiViet">
+          <label class="ml-2">Can mua</label>
+          <input class="ml-5" type="radio" value="Cho thue" formControlName="loaiBaiViet">
+          <label class="ml-2">Cho thue</label>
+          <input class="ml-5" type="radio" value="Can thue" formControlName="loaiBaiViet">
+          <label class="ml-2">Can thue</label>
+        </div>
+        <div class="form-row">
+          <span> Tinh Trang: </span>
+          <input class="ml-2" type="radio" value="Moi" formControlName="tinhTrang">
+          <label class="ml-2">Moi</label>
+          <input class="ml-5" type="radio" value="Da su dung" formControlName="tinhTrang">
+          <label class="ml-2">Da su dung</label>
+        </div>
+        <div class="form-row">
+          <label for="address" class="col-form-label form-control-label">Address :</label>
+          <input id="address" class="form-control" formControlName="diaChi" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.diaChi.errors}"/>
+          <div *ngIf="submitted &&form.diaChi.errors" class="invalid-feedback">
+            <div *ngIf="form.diaChi.hasError('required')">Dia chi khong duoc de trong</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Dien Tich :</label>
+          <input class="form-control" formControlName="dienTich" type="number"
+                 [ngClass]="{'is-invalid':submitted &&form.dienTich.errors}"/>
+          <div *ngIf="submitted &&form.dienTich.errors" class="invalid-feedback">
+            <div *ngIf="form.dienTich.hasError('required')">Dien tich khong duoc de trong</div>
+            <div *ngIf="form.dienTich.hasError('min')">Dien tich phai lon hon 20m2</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Huong</label>
+          <select name="danhMuc" formControlName="huong" class="form-control">
+            <option value="">------</option>
+            <option value="Dong">Dong</option>
+            <option value="Tay">Tay</option>
+            <option value="Nam">Nam</option>
+            <option value="Bac">Bac</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Tieu de :</label>
+          <input class="form-control" formControlName="tieuDe" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.tieuDe.errors}"/>
+          <div *ngIf="submitted &&form.tieuDe.errors" class="invalid-feedback">
+            <div *ngIf="form.tieuDe.hasError('required')">Tieu de khong duoc de trong</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Noi Dung :</label>
+          <textarea class="form-control" formControlName="noiDung" type="text"
+                    [ngClass]="{'is-invalid':submitted &&form.noiDung.errors}"></textarea>
+          <div *ngIf="submitted &&form.noiDung.errors" class="invalid-feedback">
+            <div *ngIf="form.noiDung.hasError('required')">Noi dung khong duoc de trong</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Gia :</label>
+          <input class="form-control" formControlName="gia" type="number"
+                 [ngClass]="{'is-invalid':submitted &&form.gia.errors}"/>
+          <div *ngIf="submitted &&form.gia.errors" class="invalid-feedback">
+            <div *ngIf="form.gia.hasError('required')">Gia khong duoc de trong</div>
+            <div *ngIf="form.gia.hasError('min')">Gia phai lon hon 100.000.000 VND</div>
+          </div>
+        </div>
+        <div class="form-row form-check">
+          <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                 [ngClass]="{ 'is-invalid': submitted && form.acceptTerms.errors }"/>
+          <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+          <div *ngIf="submitted && form.acceptTerms.errors" class="invalid-feedback">Gia co the thoa thuan</div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1">Add</button>
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

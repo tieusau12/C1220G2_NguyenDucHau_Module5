@@ -1,0 +1,48 @@
+{
+  "batDongSanList": [
+    {
+      "id": 1,
+      "danhMuc": "Nha Dat",
+      "vungMien": "Ha Noi",
+      "nguoiMua": "Ca Nhan",
+      "loaiBaiViet": "Can mua",
+      "tinhTrang": "Moi",
+      "diaChi": "92 Cau Giay",
+      "dienTich": 120,
+      "huong": "Dong",
+      "tieuDe": "Can mua nha",
+      "noiDung": "abc abc",
+      "gia": 20000
+    },
+    {
+      "danhMuc": "Nha Dat",
+      "vungMien": "Ha Noi",
+      "nguoiMua": "Ca Nhan",
+      "loaiBaiViet": "Can ban",
+      "tinhTrang": "Moi",
+      "diaChi": "Đà Nẵng",
+      "dienTich": 25,
+      "huong": "Dong",
+      "tieuDe": "Ban can VIlla",
+      "noiDung": "Co ho boi",
+      "gia": 100000000,
+      "acceptTerms": true,
+      "id": 2
+    },
+    {
+      "danhMuc": "Nha Dat",
+      "vungMien": "Da Nang",
+      "nguoiMua": "Ca Nhan",
+      "loaiBaiViet": "Can mua",
+      "tinhTrang": "Moi",
+      "diaChi": "Da Nang",
+      "dienTich": 27,
+      "huong": "Tay",
+      "tieuDe": "Can Mua nha",
+      "noiDung": "aasbasd",
+      "gia": 150000000,
+      "acceptTerms": true,
+      "id": 3
+    }
+  ]
+}

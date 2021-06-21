@@ -13,7 +13,7 @@
       <input type="search" [(ngModel)]="nameAPI">
       <label>Search by Email</label>
       <input type="search" [(ngModel)]="emailAPI">
-        <button (click)="filter(nameAPI,emailAPI)">Search</button>
+      <button (click)="filter(nameAPI,emailAPI)">Search</button>
     </div>
     <div class="col-9">
       <table class="table table-hover" style="margin-top: 5%">
@@ -79,8 +79,8 @@
         </tr>
         </tbody>
       </table>
-      <div class="row">
-        <div class="container text-right">
+      <div class="clearfix">
+        <div class="float-right">
           <ngb-pagination
             [(page)]="page"
             [pageSize]="pageSize"

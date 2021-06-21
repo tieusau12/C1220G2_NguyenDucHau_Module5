@@ -16,5 +16,37 @@
       "id": 4,
       "name": "SamSung"
     }
+  ],
+  "productList": [
+    {
+      "id": 1,
+      "name": "Iphone 11",
+      "price": 2000,
+      "description": "New"
+    },
+    {
+      "id": 2,
+      "name": "Iphone 11",
+      "price": 2000,
+      "description": "Hello"
+    },
+    {
+      "id": 3,
+      "name": "Iphone 11",
+      "price": 2000,
+      "description": "New"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 11",
+      "price": 9000,
+      "description": "New"
+    },
+    {
+      "id": 5,
+      "name": "Iphone 11",
+      "price": 2000,
+      "description": "New"
+    }
   ]
 }

@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="text-center text-primary">List Bat Dong San</h1>
+  <div class="row">
+    <div class="col-3">
+      <h3 class="text-danger">Tim kiem: </h3>
+      <label>Tim kiem theo Dien Tich</label>
+      <input type="search" [(ngModel)]="dienTichSearch">
+      <label>Tim kiem theo Gia</label>
+      <input type="search" [(ngModel)]="giaSearch">
+      <label>Tim kiem theo Huong</label>
+      <input type="search" [(ngModel)]="huongSearch">
+      <hr>
+      <button (click)="filter(dienTichSearch,giaSearch,huongSearch)">Search</button>
+    </div>
+    <div class="col-9">
+      <table class="table table-hover" style="margin-top: 5%; border: 2px">
+        <thead>
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">Tieu De</th>
+          <th scope="col">Loai Bai Viet</th>
+          <th scope="col">Danh Muc</th>
+          <th scope="col"> Vung Mien</th>
+          <th scope="col">Sua</th>
+          <th scope="col">Xoa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let bds of batDongSans">
+          <td>{{bds.id}}</td>
+          <td>{{bds.tieuDe}}</td>
+          <td>{{bds.loaiBaiViet}}</td>
+          <td>{{bds.danhMuc}}</td>
+          <td>{{bds.vungMien}}</td>
+          <td>Sua</td>
+          <td>Xoa</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

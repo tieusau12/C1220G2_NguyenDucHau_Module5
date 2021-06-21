@@ -10,30 +10,32 @@ import {Product} from "../../model/product";
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  productForm: FormGroup;
-  product: Product;
+  productForm!: FormGroup;
+  id: number = 0;
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
               private router: Router
   ) {
-    const id = +this.activatedRoute.snapshot.params.id;
-    this.product = <Product>this.productService.findById(id);
-    this.productForm = new FormGroup({
-      id: new FormControl(this.product.id),
-      name: new FormControl(this.product.name),
-      price: new FormControl(this.product.price),
-      description: new FormControl(this.product.description)
+    this.id = +this.activatedRoute.snapshot.params.id;
+    this.productService.findById(this.id).subscribe(product => {
+      this.productForm = new FormGroup({
+        id: new FormControl(product.id),
+        name: new FormControl(product.name),
+        price: new FormControl(product.price),
+        description: new FormControl(product.description)
+      });
     });
+
   }
 
   ngOnInit() {
   }
 
-  updateProduct() {
+  updateProduct(id: number) {
     const product = this.productForm.value;
-    this.productService.updateProduct(product);
-    alert('Cập nhật thành công');
-    this.router.navigateByUrl('/product/list');
+    this.productService.updateProduct(id, product).subscribe(() => {
+      this.router.navigateByUrl('/product/list');
+    });
   }
 }
