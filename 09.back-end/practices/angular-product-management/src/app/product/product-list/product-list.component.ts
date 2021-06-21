@@ -21,15 +21,20 @@ export class ProductListComponent implements OnInit {
     this.getAll();
   }
 
+  // private getAll() {
+  //   this.productService.getSearchAfter(this.nameSearch, this.priceSearch).subscribe(products => {
+  //     this.products = products;
+  //   })
+  // }
   private getAll() {
-    this.productService.getSearchAfter(this.nameSearch, this.priceSearch).subscribe(products => {
+    this.productService.getAll().subscribe(products => {
       this.products = products;
     })
   }
 
-  delete(id: number) {
-    this.productService.deleteProduct(id).subscribe(() => {
-      this.getAll();
-    });
-  }
+  // delete(id: number) {
+  //   this.productService.deleteProduct(id).subscribe(() => {
+  //     this.getAll();
+  //   });
+  // }
 }

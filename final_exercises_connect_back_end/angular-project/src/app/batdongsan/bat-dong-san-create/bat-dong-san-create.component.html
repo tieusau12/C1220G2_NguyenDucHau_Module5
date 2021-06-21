@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="card">
+    <h1 class="card-header text-center text-danger"> Them moi Bat Dong San</h1>
+    <div class="card-body">
+      <form [formGroup]="realEstateForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Category</label>
+          <select name="danhMuc" formControlName="category" class="form-control">
+            <option value="">------</option>
+            <option value="Nha Dat">Nhà Đất</option>
+            <option value="Nha O">Nhà Ngói </option>
+            <option value="Chung Cu">Nhà Chung Cư</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Regions :</label>
+          <select name="vungMien" formControlName="regions" class="form-control">
+            <option value="">------</option>
+            <option value="Ha Noi">Hà Nội</option>
+            <option value="Da Nang">Đà Nẵng</option>
+            <option value="Ho Chi Minh">Hồ Chí Minh</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span> Buyer : </span>
+          <input class="ml-5" type="radio" value="Ca Nhan" formControlName="buyer">
+          <label class="ml-2">Cá Nhân</label>
+          <input class="ml-5" type="radio" value="Cong Ty" formControlName="buyer">
+          <label class="ml-2">Công TY</label>
+        </div>
+        <div class="form-row">
+          <span> Article Type: </span>
+          <input class="ml-1" type="radio" value="Can ban" formControlName="articleType">
+          <label class="ml-2">Cần bán</label>
+          <input class="ml-5" type="radio" value="Can mua" formControlName="articleType">
+          <label class="ml-2">Cần mua</label>
+          <input class="ml-5" type="radio" value="Cho thue" formControlName="articleType">
+          <label class="ml-2">Cho thuê</label>
+          <input class="ml-5" type="radio" value="Can thue" formControlName="articleType">
+          <label class="ml-2">Cần thuê</label>
+        </div>
+        <div class="form-row">
+          <span> Status: </span>
+          <input class="ml-2" type="radio" value="Moi" formControlName="status">
+          <label class="ml-2">Mới</label>
+          <input class="ml-5" type="radio" value="Da su dung" formControlName="status">
+          <label class="ml-2">Đã qua sử dụng</label>
+        </div>
+        <div class="form-row">
+          <label for="address" class="col-form-label form-control-label">Address :</label>
+          <input id="address" class="form-control" formControlName="address" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.address.errors}"/>
+          <div *ngIf="submitted &&form.address.errors" class="invalid-feedback">
+            <div *ngIf="form.address.hasError('required')">Address is required</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Area :</label>
+          <input class="form-control" formControlName="area" type="number"
+                 [ngClass]="{'is-invalid':submitted &&form.area.errors}"/>
+          <div *ngIf="submitted &&form.area.errors" class="invalid-feedback">
+            <div *ngIf="form.area.hasError('required')">Area is required</div>
+            <div *ngIf="form.area.hasError('min')">Area must be over 20m2</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Direction :</label>
+          <select name="danhMuc" formControlName="direction" class="form-control">
+            <option value="">------</option>
+            <option value="Dong">Hướng Đông</option>
+            <option value="Tay">Hướng Tây</option>
+            <option value="Nam">Hướng Nam</option>
+            <option value="Bac">Hướng Bắc</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Title :</label>
+          <input class="form-control" formControlName="title" type="text"
+                 [ngClass]="{'is-invalid':submitted &&form.title.errors}"/>
+          <div *ngIf="submitted &&form.title.errors" class="invalid-feedback">
+            <div *ngIf="form.title.hasError('required')">Title is required</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Content :</label>
+          <textarea class="form-control" formControlName="content" type="text"
+                    [ngClass]="{'is-invalid':submitted &&form.content.errors}"></textarea>
+          <div *ngIf="submitted &&form.content.errors" class="invalid-feedback">
+            <div *ngIf="form.content.hasError('required')">Content is required</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="col-form-label form-control-label">Price :</label>
+          <input class="form-control" formControlName="price" type="number"
+                 [ngClass]="{'is-invalid':submitted &&form.price.errors}"/>
+          <div *ngIf="submitted &&form.price.errors" class="invalid-feedback">
+            <div *ngIf="form.price.hasError('required')">price must be more than 10000 USD</div>
+            <div *ngIf="form.price.hasError('min')"></div>
+          </div>
+        </div>
+        <div class="form-row form-check">
+          <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                 [ngClass]="{ 'is-invalid': submitted && form.acceptTerms.errors }"/>
+          <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+          <div *ngIf="submitted && form.acceptTerms.errors" class="invalid-feedback">Price is negotiable</div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1">Add</button>
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

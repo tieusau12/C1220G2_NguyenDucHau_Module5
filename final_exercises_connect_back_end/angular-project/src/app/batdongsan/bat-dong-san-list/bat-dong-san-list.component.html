@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 class="text-center text-primary">List Real Estate</h1>
+  <div class="row">
+    <div class="col-3">
+      <h3 class="text-danger">Search : </h3>
+      <label>Search by Area</label>
+      <input type="search" [(ngModel)]="areaSearch">
+      <label>Search by Price</label>
+      <input type="search" [(ngModel)]="priceSearch">
+      <label>Search by Direction</label>
+      <input type="search" [(ngModel)]="directionSearch">
+      <hr>
+      <button class="btn btn-primary" (click)="filter(areaSearch,priceSearch,directionSearch)">Search</button>
+    </div>
+    <div class="col-9">
+      <table class="table table-hover" style="margin-top: 5%; border: 2px">
+        <thead>
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">Title</th>
+          <th scope="col">Type Post</th>
+          <th scope="col">Category</th>
+          <th scope="col">Regions</th>
+          <th scope="col">Edit</th>
+          <th scope="col">View</th>
+          <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let bds of batDongSans">
+          <td>{{bds.id}}</td>
+          <td>{{bds.title}}</td>
+          <td>{{bds.articleType}}</td>
+          <td>{{bds.category}}</td>
+          <td>{{bds.regions}}</td>
+          <td>
+            <button class="btn btn-warning">Edit</button>
+          </td>
+          <td>
+            <button class="btn btn-primary">View</button>
+          </td>
+          <td>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
